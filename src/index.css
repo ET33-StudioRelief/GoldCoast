@@ -9,6 +9,30 @@
   }
 }
 
-.sticky-btn_wrapper {
-  animation: slideInFromLeft 0.5s ease-out forwards;
+@keyframes fadeInSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar_logo-link {
+    opacity: 0;
+    animation: fadeInSmooth 0.8s 0.2s forwards;
+  }
+
+  .hero_heading-content {
+    opacity: 0;
+    animation: fadeInSmooth 0.8s 1s forwards;
+  }
+
+  .sticky-btn_wrapper {
+    opacity: 0;
+    animation: slideInFromLeft 0.5s 2s forwards;
+  }
 }
