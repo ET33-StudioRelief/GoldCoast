@@ -7,6 +7,13 @@ initHeadingAnimation();
 initTeamSectionAnimation();
 
 function updateStickyZIndex() {
+  if (window.innerWidth >= 768) {
+    // Sur desktop, on remet le z-index à la valeur normale
+    const sticky = document.querySelector('.sticky-btn_wrapper') as HTMLElement | null;
+    if (sticky) sticky.style.zIndex = '999';
+    return;
+  }
+
   const sticky = document.querySelector('.sticky-btn_wrapper') as HTMLElement | null;
   const footer = document.querySelector('.footer_component') as HTMLElement | null;
   if (!sticky || !footer) return;
