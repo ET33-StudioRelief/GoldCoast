@@ -1,7 +1,7 @@
-import { greetUser } from '$utils/greet';
+import './index.css';
+import './styles/ergodent.css';
 
-window.Webflow ||= [];
-window.Webflow.push(() => {
-  const name = 'John Doe';
-  greetUser(name);
-});
+import { initHeadingAnimation, initTeamSectionAnimation } from './utils/gsap';
+
+initHeadingAnimation();
+initTeamSectionAnimation();
