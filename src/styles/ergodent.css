@@ -1,113 +1,18 @@
+/*composant*/
 .ergodent {
   display: flex !important;
   flex-direction: column !important;
-  justify-content: stretch !important;
+  justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
-  gap: 1.88rem !important;
 }
 .registrationProgress {
   display: none;
 }
-/* STEP1 */
-#FirstPageTitleText {
-  color: #000;
-  text-align: center;
-  font-family: 'ABC Arizona Flare Unlicensed Trial';
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-#ErgoDentChooseAppointmentTypeText {
-  color: #000;
-  text-align: center;
-  font-family: 'ABC Arizona';
-  font-size: 1.875rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  letter-spacing: -0.01875rem;
-}
-/* STEP3 - Calendar */
-#calendarTable th {
-  padding: 1rem;
-}
-
-.ergodent .calendar td {
-  border: 1px solid #dddddd !important;
-}
-.timeLine {
-  border-top: 1px solid #dddddd !important;
-}
-
-.ergodent .calendar .bookable {
-  background: #ffe1b1;
-  background-position: center;
-  cursor: pointer;
-  padding: 0px;
-  margin: 0px;
-}
-.ergodent .calendar .bookable:hover {
-  background: #cac9e6;
-}
-#freeTimeSlotsTable {
-  border: 1px solid black;
-}
-
-/*step2*/
-.ergodent .appointmentdetailbookable {
-  background: #9dd1ee;
-  border: 1px solid black !important;
-  text-align: center;
-  overflow: hidden;
-  padding: 0px;
-  margin: 0px;
-}
-
-#firstTimeRow,
-#secondTimeRow,
-#thirdTimeRow,
-#fourthTimeRow,
-#fifthTimeRow,
-#sixthTimeRow {
-  border: 1px solid #dddddd !important;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding: 1rem;
-}
-
-.appointmentdetailright {
-  border: 1px solid #dddddd !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.appointmentdetailbookable {
-  background: #9dd1ee;
-}
-
-.appointmentdetailbookable a {
-  border: 1px solid #dddddd !important;
-}
-
-.appointmentdetailright {
-  border: 1px solid #dddddd !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.appointmentdetailnormal,
-.appointmentdetailnormalhead {
-  background-color: red !important;
-}
-/*composant*/
 #ErgoDiv button {
   border-radius: 1.25rem;
   padding: 0.5rem 1.25rem;
+  background-color: white;
 }
 
 #ErgoDiv button:hover {
@@ -117,8 +22,10 @@
 #ErgoDiv input.input,
 #ErgoDiv select.input,
 #ErgoDiv textarea.input {
+  background-color: white !important;
   border-width: 1px;
   border-style: solid;
+  border-color: #cac9e6 !important;
   /*width:100%;*/
   border-radius: 0.75rem;
   padding: 0.75rem;
@@ -128,15 +35,9 @@
 #ErgoDiv select.input:focus,
 #ErgoDiv input.input:focus,
 #ErgoDiv textarea.input:focus {
-  border-color: #cac9e6 !important; /* ta couleur custom */
-  outline: none !important; /* supprime le halo du navigateur */
-  box-shadow: none !important; /* supprime tout effet de profondeur */
-}
-
-#inputEmail {
-  margin-bottom: 2rem;
-  width: auto !important;
-  min-width: 19rem;
+  border-color: #cac9e6 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 #ErgoDiv h1 {
@@ -159,9 +60,29 @@
 #ErgoDentChooseAppointmentTypeText {
   font-size: 1.25rem;
 }
-
+/* STEP1 */
+#FirstPageTitleText {
+  color: #000;
+  text-align: center;
+  font-family: 'ABC Arizona Flare Unlicensed Trial';
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#ErgoDentChooseAppointmentTypeText {
+  color: #000;
+  text-align: center;
+  font-family: 'ABC Arizona';
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.01875rem;
+}
 /*select dropdown - STEP1*/
 #appointmentTypeSelect {
+  margin-top: 1.88rem !important;
   background-color: white !important;
   border-radius: 2.5rem !important;
   border: 2px solid #cac9e6 !important;
@@ -177,11 +98,10 @@
   padding-right: 4rem !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
-  font-family: 'ABC Arizona' !important;
   font-size: 1.125rem !important;
   color: #66686b !important;
 }
-/*Step3 - Image*/
+/*Step2 - Image*/
 #resourceSelectionMain img {
   max-height: 20rem;
   width: 100%;
@@ -209,66 +129,7 @@
   text-align: center !important;
 }
 
-/*Step4*/
-/*Formulaire*/
-#ErgoDiv div div:nth-child(3) div:nth-child(1),
-#ErgoDiv div div:nth-child(3) div:nth-child(2),
-#ErgoDiv div div:nth-child(3) div:nth-child(3) {
-  width: 30%;
-}
-
-/*Formulaire*/
-#patientGender {
-  width: auto !important;
-}
-
-#ErgoDiv div div:nth-child(3) div:nth-child(1) {
-  position: relative;
-}
-
-#patientGender {
-  height: auto !important;
-  background-color: transparent;
-  padding: 0.75rem;
-  border-radius: 0.75rem;
-  position: absolute;
-  left: -4rem;
-}
-
-#patientRemarks {
-  height: 100%;
-  width: 100%;
-  border-radius: 0.75rem;
-  padding: 0.75rem;
-  background-color: transparent;
-  border-color: #66686b;
-}
-
-#LegalRepresentativeText {
-  position: absolute;
-  top: -3rem;
-}
-
-#legalRepresentativeDiv {
-  position: relative;
-}
-/*[form] top of Captcha - empty div */
-#inputErrorExplanation {
-  display: none;
-}
-/* Captcha */
-#GeneratedCaptcha img {
-  width: auto !important;
-}
-/*nom medcin a cote horaires*/
-#ErgoDiv div div:nth-child(4) div:nth-child(1) {
-  width: auto;
-}
-#ErgoDiv div div:nth-child(3) div:nth-child(1),
-#ErgoDiv div div:nth-child(3) div:nth-child(2),
-#ErgoDiv div div:nth-child(3) div:nth-child(3) {
-  width: 100%;
-}
+/*Step3 - Nav btn*/
 .stylizedButtonSmall,
 .stylizedButton {
   margin-right: 1.88rem !important;
@@ -318,6 +179,41 @@
   background: #fff;
   margin-right: 1.88rem !important;
 }
+/* STEP3 - Calendar */
+#AppointmentText,
+#SelectAppointmentHourText,
+#TimeText,
+#SelectAppointmentStartTimeText {
+  text-align: center !important;
+}
+#SelectAppointmentHourText {
+  margin-bottom: 1.88rem !important;
+}
+#calendarTable {
+  margin-top: 1.88rem !important;
+}
+#calendarTable th {
+  padding: 1rem;
+}
+
+.ergodent .calendar td {
+  border: 1px solid #ffe1b1 !important;
+}
+.timeLine {
+  border-top: 1px solid #ffe1b1 !important;
+}
+
+.ergodent .calendar .bookable {
+  border: 1px solid white !important;
+  background: #ffe1b1;
+  background-position: center;
+  cursor: pointer;
+  padding: 0px;
+  margin: 0px;
+}
+.ergodent .calendar .bookable:hover {
+  background: #cac9e6;
+}
 
 #ErgoDiv > div > div:nth-child(3) > div {
   display: flex;
@@ -335,9 +231,175 @@
 .ergodent .row {
   width: 100% !important;
 }
-.ergodent .row .col-sm-12 {
-  width: 100% !important;
-}
-.table {
+
+/*Step4 - Doctor info*/
+.yourchoice {
+  padding: 1.88rem !important;
+  border-radius: 1.88rem !important;
+  border: 1px solid #dddddd !important;
   background-color: #fff !important;
+}
+/*Step4 - Title*/
+#SelectAppointmentStartTimeText {
+  margin-bottom: 1.88rem !important;
+}
+/*Step4 - Table*/
+table {
+  background-color: #fff !important;
+  border-radius: 1.88rem !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+.appointmentdetailheader,
+.appointmentdetailbottom {
+  border-top: 1px solid #ffe1b1 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+tr:first-child > th.appointmentdetailheader {
+  border-top: none !important;
+}
+.appointmentdetailbookable {
+  background: #ffe1b1;
+}
+.appointmentdetailbookable:hover {
+  background: #cac9e6;
+}
+#freeTimeSlotsTable tr {
+  border-top: 1px solid #fff !important;
+  border-left: 1px solid #ffe1b1 !important;
+  cursor: pointer !important;
+}
+.appointmentdetailbookable {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+#freeTimeSlotsTable > tbody > tr {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-bottom: 1px solid #ffe1b1 !important;
+}
+.appointmentdetailright {
+  width: auto !important;
+}
+#freeTimeSlotsTable {
+  border-radius: 0 !important;
+}
+
+.appointmentdetailbookable div {
+  margin: 0 !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+}
+
+/*STep5 - Email*/
+#RegisterText,
+#EnterEmailText {
+  text-align: center !important;
+}
+
+#inputEmail {
+  border: 2px solid #cac9e6 !important;
+  background-color: white !important;
+  margin-bottom: 2rem;
+  margin-top: 1.88rem !important;
+  min-width: 19rem;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+  max-width: 25rem;
+  width: 100%;
+}
+
+/* Buttons align center */
+.col-lg-12 {
+  text-align: center;
+}
+#backButtonId,
+#continueButtonId {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*STep6 - Formulaire*/
+
+#patientGender {
+  width: auto !important;
+}
+
+#ErgoDiv div div:nth-child(3) div:nth-child(1) {
+  position: relative;
+}
+
+#patientGender {
+  height: auto !important;
+  background-color: transparent;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  position: absolute;
+  left: -4rem;
+}
+
+#patientRemarks {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  background-color: transparent;
+  border-color: #66686b;
+}
+
+#LegalRepresentativeText {
+  margin-right: 1.88rem !important;
+}
+
+#legalRepresentativeDiv {
+  position: relative;
+}
+/*[form] top of Captcha - empty div */
+#inputErrorExplanation {
+  display: none;
+}
+/* Captcha */
+#GeneratedCaptcha img {
+  width: auto !important;
+}
+
+/*A DEFINIR*/
+
+#ErgoDiv > div > div:nth-child(3) > div:nth-child(1),
+#ErgoDiv > div > div:nth-child(3) > div:nth-child(2),
+#legalRepresentativeDiv {
+  width: 100%;
+  display: block;
+}
+#PleaseRegisterText {
+  margin-bottom: 1.88rem !important;
+}
+#legalGuardianFirstName {
+  margin-right: 1rem !important;
+}
+.col-xs-12.col-md-6 {
+  display: flex !important;
+}
+
+#ErgoDiv > div > div:nth-child(9) > div {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/*last step - Confirmation*/
+#appointmentSaveOkMessage,
+#ConfirmationText,
+#ConfirmAppointment_PatientName {
+  text-align: center !important;
 }
