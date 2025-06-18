@@ -1,6 +1,8 @@
 /*composant*/
 #ErgoDiv {
   max-width: 80vw !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .ergodent {
   display: flex !important;
@@ -348,12 +350,11 @@ tr:first-child > th.appointmentdetailheader {
   border: 2px solid #cac9e6 !important;
   margin-bottom: 2rem;
   margin-top: 1.88rem !important;
-  min-width: 19rem;
+  width: 19rem;
   margin-left: auto !important;
   margin-right: auto !important;
   display: block;
   max-width: 25rem;
-  width: 100%;
 }
 
 /*STep6 - Formulaire*/
@@ -463,11 +464,11 @@ tr:first-child > th.appointmentdetailheader {
   left: 45%;
   transform: translateX(-45%);
 }
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
   #backButtonId,
   #continueButtonId {
-    left: 38%;
-    transform: translateX(-38%);
+    left: 20%;
+    transform: translateX(-20%);
   }
 }
 @media (max-width: 767px) {
