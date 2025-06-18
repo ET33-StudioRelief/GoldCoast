@@ -1,4 +1,7 @@
 /*composant*/
+#ErgoDiv {
+  max-width: 80vw !important;
+}
 .ergodent {
   display: flex !important;
   flex-direction: column !important;
