@@ -23,13 +23,9 @@
 #ErgoDiv select.input,
 #ErgoDiv textarea.input {
   background-color: white !important;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cac9e6 !important;
-  /*width:100%;*/
+  border: 0px !important;
   border-radius: 0.75rem;
   padding: 0.75rem;
-  background-color: transparent;
 }
 
 #ErgoDiv select.input:focus,
@@ -41,8 +37,8 @@
 }
 
 #ErgoDiv p {
-  /*font-family: 'ABC Arizona';
-    font-weight: 300!important;*/
+  font-family: 'ABC Arizona Flare Unlicensed Trial';
+  font-weight: 300;
   font-size: 1.5rem !important;
   line-height: 2rem !important;
 }
@@ -82,16 +78,10 @@
 }
 #ErgoDentChooseAppointmentTypeText {
   text-align: center;
-  /*font-family: 'ABC Arizona';
-    font-weight: 300;*/
   font-size: 1.875rem !important;
   letter-spacing: -0.01875rem !important;
 }
-/*Step1*/
-/*select dropdown */
-.col-xs-12.col-md-6 {
-  display: flex !important;
-}
+
 #appointmentTypeSelect {
   margin-top: 1.88rem !important;
   border-radius: 2.5rem !important;
@@ -109,6 +99,7 @@
   cursor: pointer !important;
   transition: all 0.3s ease !important;
   font-size: 1.125rem !important;
+  width: 100% !important;
   max-width: 80vw !important;
 }
 
@@ -253,13 +244,6 @@
   background: #cac9e6;
 }
 
-#ErgoDiv > div > div:nth-child(3) > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 #calendarTable {
   background-color: #fff !important;
   border-radius: 1.88rem !important;
@@ -268,6 +252,7 @@
 
 .ergodent .row {
   width: 100% !important;
+  max-width: 80vw !important;
 }
 @media (max-width: 650px) {
   #calendarTable {
@@ -358,7 +343,6 @@ tr:first-child > th.appointmentdetailheader {
 
 #inputEmail {
   border: 2px solid #cac9e6 !important;
-  background-color: white !important;
   margin-bottom: 2rem;
   margin-top: 1.88rem !important;
   min-width: 19rem;
@@ -370,8 +354,8 @@ tr:first-child > th.appointmentdetailheader {
 }
 
 /*STep6 - Formulaire*/
-#patientGender {
-  width: auto !important;
+#PleaseRegisterText {
+  text-align: center !important;
 }
 
 #ErgoDiv div div:nth-child(3) div:nth-child(1) {
@@ -380,11 +364,22 @@ tr:first-child > th.appointmentdetailheader {
 
 #patientGender {
   height: auto !important;
-  background-color: transparent;
   padding: 0.75rem;
   border-radius: 0.75rem;
-  position: absolute;
-  left: -4rem;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CAC9E6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 1.5rem center !important;
+  background-size: 1.5rem !important;
+  padding-right: 4rem !important;
+  padding-left: 2rem !important;
+}
+@media (max-width: 1000px) {
+  #patientGender {
+    position: static !important;
+  }
 }
 
 #patientRemarks {
@@ -392,17 +387,14 @@ tr:first-child > th.appointmentdetailheader {
   width: 100%;
   border-radius: 0.75rem;
   padding: 0.75rem;
-  background-color: transparent;
-  border-color: #66686b;
 }
 
-#LegalRepresentativeText {
-  margin-right: 1.88rem !important;
+@media (max-width: 700px) {
+  #legalRepresentativeDiv {
+    flex-direction: column !important;
+  }
 }
 
-#legalRepresentativeDiv {
-  position: relative;
-}
 /*[form] top of Captcha - empty div */
 #inputErrorExplanation {
   display: none;
@@ -410,6 +402,15 @@ tr:first-child > th.appointmentdetailheader {
 /* Captcha */
 #GeneratedCaptcha img {
   width: auto !important;
+}
+#GeneratedCaptcha {
+  width: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#CaptchaInputField {
+  width: 18rem !important;
 }
 
 /*A DEFINIR*/
@@ -452,11 +453,39 @@ tr:first-child > th.appointmentdetailheader {
   border: 0px !important;
 }
 
-/* Cibler tous les boutons et centrer sans affecter col-lg-12 */
+/* buton center */
 #backButtonId,
 #continueButtonId {
-  display: inline-block;
   position: relative;
-  left: 47%;
-  transform: translateX(-47%);
+  left: 45%;
+  transform: translateX(-45%);
+}
+@media (max-width: 1000px) {
+  #backButtonId,
+  #continueButtonId {
+    left: 38%;
+    transform: translateX(-38%);
+  }
+}
+@media (max-width: 767px) {
+  #ErgoDiv input.input,
+  #ErgoDiv select.input,
+  #ErgoDiv textarea.input {
+    width: 100% !important;
+  }
+  #ErgoDiv > div > div:nth-child(3) > div {
+    max-width: 80vw !important;
+  }
+  #legalRepresentativeDiv {
+    flex-direction: column !important;
+  }
+  #legalGuardianFirstName {
+    margin-right: 0 !important;
+  }
+  #ErgoDiv > div > div:nth-child(3) {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 }
