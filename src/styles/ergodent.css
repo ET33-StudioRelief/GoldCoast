@@ -35,32 +35,42 @@
 #ErgoDiv select.input:focus,
 #ErgoDiv input.input:focus,
 #ErgoDiv textarea.input:focus {
-  border-color: #cac9e6 !important;
+  border: 1px solid #cac9e6 !important;
   outline: none !important;
   box-shadow: none !important;
 }
 
-#ErgoDiv h1 {
-  color: #000;
-  font-family: 'ABC Arizona';
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 300;
-}
-
 #ErgoDiv p {
-  color: #000;
-  font-family: 'ABC Arizona';
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 2rem;
+  /*font-family: 'ABC Arizona';
+    font-weight: 300!important;*/
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
 }
 
 #ErgoDentChooseAppointmentTypeText {
-  font-size: 1.25rem;
+  text-align: center !important;
+  /*font-family: "ABC Arizona"!important;
+  font-weight: 300!important;*/
+  font-size: 1.875rem !important;
+  letter-spacing: -0.01875rem !important;
+}
+
+@media (max-width: 1000px) {
+  .booking_content {
+    width: 100% !important;
+  }
+}
+
+#backButtonId {
+  background-color: transparent !important;
+  border: none !important;
+  text-decoration: underline !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  /*width:100%!important;*/
 }
 /* STEP1 */
+/*Title*/
 #FirstPageTitleText {
   color: #000;
   text-align: center;
@@ -71,21 +81,20 @@
   line-height: normal;
 }
 #ErgoDentChooseAppointmentTypeText {
-  color: #000;
   text-align: center;
-  font-family: 'ABC Arizona';
-  font-size: 1.875rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  letter-spacing: -0.01875rem;
+  /*font-family: 'ABC Arizona';
+    font-weight: 300;*/
+  font-size: 1.875rem !important;
+  letter-spacing: -0.01875rem !important;
 }
-/*select dropdown - STEP1*/
+/*Step1*/
+/*select dropdown */
+.col-xs-12.col-md-6 {
+  display: flex !important;
+}
 #appointmentTypeSelect {
   margin-top: 1.88rem !important;
-  background-color: white !important;
   border-radius: 2.5rem !important;
-  border: 2px solid #cac9e6 !important;
   height: 3.125rem;
   padding: 1.00031rem 1.50044rem;
   appearance: none !important;
@@ -96,12 +105,32 @@
   background-position: right 1.5rem center !important;
   background-size: 1.5rem !important;
   padding-right: 4rem !important;
+  padding-left: 2rem !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
   font-size: 1.125rem !important;
-  color: #66686b !important;
+  max-width: 80vw !important;
 }
-/*Step2 - Image*/
+
+/*Step2*/
+/*Title*/
+#ErgoDentChoosePractitionerText {
+  text-align: center !important;
+  /*font-family: 'ABC Arizona';
+    font-weight: 300;*/
+  font-size: 1.875rem !important;
+  letter-spacing: -0.01875rem !important;
+  max-width: 80vw !important;
+}
+/*Step2*/
+/*Container*/
+#resourceSelectionMain {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+}
+/*Step2*/
+/*Team IMG*/
 #resourceSelectionMain img {
   max-height: 20rem;
   width: 100%;
@@ -109,12 +138,8 @@
   object-position: 50% 0%;
 }
 
-#resourceSelectionMain {
-  gap: 3.5rem;
-  display: flex;
-  justify-content: center;
-}
-
+/*Step2*/
+/*Team Info Content*/
 #resourceSelectionMain > div:nth-child(1),
 #resourceSelectionMain > div:nth-child(2) {
   background-color: white !important;
@@ -127,6 +152,18 @@
 #resourceSelectionMain > div:nth-child(2) > a > p {
   margin: 1rem 1.5rem !important;
   text-align: center !important;
+}
+/*Step2*/
+/*Responsive*/
+@media (max-width: 700px) {
+  #resourceSelectionMain {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #resourceSelectionMain div {
+    width: 100% !important;
+  }
 }
 
 /*Step3 - Nav btn*/
@@ -179,6 +216,7 @@
   background: #fff;
   margin-right: 1.88rem !important;
 }
+
 /* STEP3 - Calendar */
 #AppointmentText,
 #SelectAppointmentHourText,
@@ -231,9 +269,23 @@
 .ergodent .row {
   width: 100% !important;
 }
+@media (max-width: 650px) {
+  #calendarTable {
+    border-radius: 0.5rem !important;
+  }
+  #calendarTable th {
+    padding: 0.25rem !important;
+  }
+  .stylizedButtonSmall[onclick*='BackWeek'],
+  .stylizedButton[onclick*='ForwardWeek'],
+  .stylizedButton[onclick*='ForwardMonth'] {
+    margin-right: 0.25rem !important;
+  }
+}
 
 /*Step4 - Doctor info*/
 .yourchoice {
+  margin-top: 1.88rem !important;
   padding: 1.88rem !important;
   border-radius: 1.88rem !important;
   border: 1px solid #dddddd !important;
@@ -247,8 +299,8 @@
 table {
   background-color: #fff !important;
   border-radius: 1.88rem !important;
-  width: 100% !important;
   overflow: hidden !important;
+  width: 100% !important;
 }
 .appointmentdetailheader,
 .appointmentdetailbottom {
@@ -317,18 +369,7 @@ tr:first-child > th.appointmentdetailheader {
   width: 100%;
 }
 
-/* Buttons align center */
-.col-lg-12 {
-  text-align: center;
-}
-#backButtonId,
-#continueButtonId {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 /*STep6 - Formulaire*/
-
 #patientGender {
   width: auto !important;
 }
@@ -385,9 +426,6 @@ tr:first-child > th.appointmentdetailheader {
 #legalGuardianFirstName {
   margin-right: 1rem !important;
 }
-.col-xs-12.col-md-6 {
-  display: flex !important;
-}
 
 #ErgoDiv > div > div:nth-child(9) > div {
   width: 100% !important;
@@ -402,4 +440,23 @@ tr:first-child > th.appointmentdetailheader {
 #ConfirmationText,
 #ConfirmAppointment_PatientName {
   text-align: center !important;
+}
+
+/*Test no bookable*/
+.appointmentdetailnormal,
+.appointmentdetailnormalhead {
+  border: 0px !important;
+  background-color: red !important;
+}
+#freeTimeSlotsTable tr {
+  border: 0px !important;
+}
+
+/* Cibler tous les boutons et centrer sans affecter col-lg-12 */
+#backButtonId,
+#continueButtonId {
+  display: inline-block;
+  position: relative;
+  left: 47%;
+  transform: translateX(-47%);
 }
