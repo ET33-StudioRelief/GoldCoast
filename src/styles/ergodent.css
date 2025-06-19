@@ -1,9 +1,11 @@
 /*composant*/
 #ErgoDiv {
-  max-width: 80vw !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .ergodent {
   display: flex !important;
   flex-direction: column !important;
@@ -11,6 +13,7 @@
   align-items: center !important;
   width: 100% !important;
 }
+
 .registrationProgress {
   display: none;
 }
@@ -48,14 +51,6 @@
   line-height: 2rem !important;
 }
 
-#ErgoDentChooseAppointmentTypeText {
-  text-align: center !important;
-  /*font-family: "ABC Arizona"!important;
-  font-weight: 300!important;*/
-  font-size: 1.875rem !important;
-  letter-spacing: -0.01875rem !important;
-}
-
 @media (max-width: 1000px) {
   .booking_content {
     width: 100% !important;
@@ -66,27 +61,28 @@
   background-color: transparent !important;
   border: none !important;
   text-decoration: underline !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  /*margin-left: auto !important;
+  margin-right: auto !important;*/
   /*width:100%!important;*/
+}
+/*calendar nav btn (step 3)*/
+.ergodent .row {
+  width: 100% !important;
 }
 /* STEP1 */
 /*Title*/
+#ErgoDentChooseAppointmentTypeText {
+  text-align: center !important;
+  /*font-size: 1.875rem !important;*/
+}
 #FirstPageTitleText {
-  color: #000;
   text-align: center;
   font-family: 'ABC Arizona Flare Unlicensed Trial';
   font-size: 1.125rem;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
-}
-#ErgoDentChooseAppointmentTypeText {
-  text-align: center;
-  font-size: 1.875rem !important;
-  letter-spacing: -0.01875rem !important;
 }
 
+/*select dropdown */
 #appointmentTypeSelect {
   margin-top: 1.88rem !important;
   border-radius: 2.5rem !important;
@@ -109,22 +105,17 @@
 }
 
 /*Step2*/
-/*Title*/
-#ErgoDentChoosePractitionerText {
-  text-align: center !important;
-  /*font-family: 'ABC Arizona';
-    font-weight: 300;*/
-  font-size: 1.875rem !important;
-  letter-spacing: -0.01875rem !important;
-  max-width: 80vw !important;
-}
-/*Step2*/
 /*Container*/
 #resourceSelectionMain {
   display: flex;
   justify-content: center;
   gap: 3.5rem;
 }
+
+#resourceSelectionMain div a {
+  text-decoration: none !important;
+}
+
 /*Step2*/
 /*Team IMG*/
 #resourceSelectionMain img {
@@ -159,6 +150,67 @@
   }
   #resourceSelectionMain div {
     width: 100% !important;
+  }
+}
+/* STEP3 - Calendar */
+#AppointmentText,
+#SelectAppointmentHourText,
+#TimeText,
+#SelectAppointmentStartTimeText {
+  text-align: center !important;
+}
+#SelectAppointmentHourText {
+  margin-bottom: 1.88rem !important;
+}
+#calendarTable {
+  margin-top: 1.88rem !important;
+}
+#calendarTable th {
+  padding: 1rem !important;
+}
+
+.ergodent .calendar td {
+  border: 1px solid #ffe1b1 !important;
+}
+.timeLine {
+  border-top: 1px solid #ffe1b1 !important;
+}
+
+.ergodent .calendar .bookable {
+  border: 1px solid white !important;
+  background: #ffe1b1 !important;
+  background-position: center !important;
+  cursor: pointer !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.ergodent .calendar .bookable:hover {
+  background: #cac9e6 !important;
+}
+
+#calendarTable {
+  background-color: #fff !important;
+  border-radius: 1.88rem !important;
+  width: 100% !important;
+}
+
+@media (max-width: 650px) {
+  #calendarTable {
+    border-radius: 0.5rem !important;
+  }
+  #calendarTable th {
+    padding: 0.25rem !important;
+  }
+  .stylizedButtonSmall[onclick*='BackWeek'],
+  .stylizedButton[onclick*='ForwardWeek'],
+  .stylizedButton[onclick*='ForwardMonth'] {
+    margin-right: 0.25rem !important;
+  }
+}
+@media (max-width: 400px) {
+  #calendarTable th {
+    padding: 0.15rem !important;
+    font-size: 0.75rem !important;
   }
 }
 
@@ -213,75 +265,19 @@
   margin-right: 1.88rem !important;
 }
 
-/* STEP3 - Calendar */
-#AppointmentText,
-#SelectAppointmentHourText,
-#TimeText,
+/*Step4 */
 #SelectAppointmentStartTimeText {
-  text-align: center !important;
-}
-#SelectAppointmentHourText {
   margin-bottom: 1.88rem !important;
 }
-#calendarTable {
-  margin-top: 1.88rem !important;
-}
-#calendarTable th {
-  padding: 1rem;
-}
-
-.ergodent .calendar td {
-  border: 1px solid #ffe1b1 !important;
-}
-.timeLine {
-  border-top: 1px solid #ffe1b1 !important;
-}
-
-.ergodent .calendar .bookable {
-  border: 1px solid white !important;
-  background: #ffe1b1;
-  background-position: center;
-  cursor: pointer;
-  padding: 0px;
-  margin: 0px;
-}
-.ergodent .calendar .bookable:hover {
-  background: #cac9e6;
-}
-
-#calendarTable {
-  background-color: #fff !important;
-  border-radius: 1.88rem !important;
-  width: 100% !important;
-}
-
-.ergodent .row {
-  width: 100% !important;
-  max-width: 80vw !important;
-}
-@media (max-width: 650px) {
-  #calendarTable {
-    border-radius: 0.5rem !important;
-  }
-  #calendarTable th {
-    padding: 0.25rem !important;
-  }
-  .stylizedButtonSmall[onclick*='BackWeek'],
-  .stylizedButton[onclick*='ForwardWeek'],
-  .stylizedButton[onclick*='ForwardMonth'] {
-    margin-right: 0.25rem !important;
-  }
-}
-
-/*Step4 - Doctor info*/
+/* Doctor info*/
 .yourchoice {
-  margin-top: 1.88rem !important;
+  /*margin-top: 1.88rem !important;*/
   padding: 1.88rem !important;
   border-radius: 1.88rem !important;
   border: 1px solid #dddddd !important;
   background-color: #fff !important;
 }
-/*Step4 - Title*/
+/*Title*/
 #SelectAppointmentStartTimeText {
   margin-bottom: 1.88rem !important;
 }
@@ -368,8 +364,6 @@ tr:first-child > th.appointmentdetailheader {
 
 #patientGender {
   height: auto !important;
-  padding: 0.75rem;
-  border-radius: 0.75rem;
   appearance: none !important;
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
@@ -458,14 +452,14 @@ tr:first-child > th.appointmentdetailheader {
 }
 
 /* buton center */
-#backButtonId,
+/*#backButtonId,*/
 #continueButtonId {
   position: relative;
-  left: 45%;
-  transform: translateX(-45%);
+  left: 25%;
+  transform: translateX(-25%);
 }
 @media (max-width: 600px) {
-  #backButtonId,
+  /*#backButtonId,*/
   #continueButtonId {
     left: 20%;
     transform: translateX(-20%);

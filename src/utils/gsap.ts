@@ -117,3 +117,31 @@ export function initTeamSectionAnimation() {
     }
   );
 }
+
+export function initStickyBookingButtonOpacity() {
+  // Vérifier si l'écran est plus large que 480px
+  if (window.innerWidth <= 480) return;
+
+  const stickyBtn = document.querySelector('.sticky-booking-btn');
+  const footerComponent = document.querySelector('.footer_component');
+
+  if (!stickyBtn || !footerComponent) return;
+
+  // Animation pour faire disparaître le bouton lors du survol du footer
+  footerComponent.addEventListener('mouseenter', () => {
+    gsap.to(stickyBtn, {
+      opacity: 0,
+      duration: 0.3,
+      ease: 'power2.out',
+    });
+  });
+
+  // Animation pour faire réapparaître le bouton quand on quitte le footer
+  footerComponent.addEventListener('mouseleave', () => {
+    gsap.to(stickyBtn, {
+      opacity: 1,
+      duration: 0.3,
+      ease: 'power2.out',
+    });
+  });
+}
