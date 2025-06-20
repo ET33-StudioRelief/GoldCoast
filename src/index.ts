@@ -1,5 +1,4 @@
 import './index.css';
-import './styles/ergodent.css';
 
 import {
   initHeadingAnimation,
