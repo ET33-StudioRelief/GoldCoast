@@ -1,3 +1,14 @@
+/*Selection*/
+body::selection {
+  background-color: #cac9e6;
+}
+
+body {
+  background: linear-gradient(180deg, #ffe1b1 19.19%, #fff 100%) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
+}
+/*Micro CSS Animations*/
 @keyframes slideInFromLeft {
   from {
     transform: translateX(100%);
@@ -36,7 +47,7 @@
     animation: slideInFromLeft 0.5s 2s forwards;
   }
 }
-/*Footer*/
+/*Footer Responsive*/
 @media (min-width: 1400px) {
   #footer-contact {
     display: none;
@@ -47,7 +58,8 @@
     margin-left: auto;
   }
 }
-/*Selection*/
-body::selection {
-  background-color: #cac9e6;
+@media (max-width: 1300px) {
+  .footer_catch-p {
+    max-width: 80%;
+  }
 }

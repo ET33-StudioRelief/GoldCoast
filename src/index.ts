@@ -1,6 +1,8 @@
 import './index.css';
 
 import {
+  initAboutUsAnimation,
+  initFeaturesBannerAnimation,
   initHeadingAnimation,
   initStickyBookingButtonOpacity,
   initTeamSectionAnimation,
@@ -12,4 +14,6 @@ window.Webflow.push(() => {
   initHeadingAnimation();
   initTeamSectionAnimation();
   initStickyBookingButtonOpacity();
+  initFeaturesBannerAnimation();
+  initAboutUsAnimation();
 });

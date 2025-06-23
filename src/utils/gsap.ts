@@ -145,3 +145,57 @@ export function initStickyBookingButtonOpacity() {
     });
   });
 }
+
+export function initFeaturesBannerAnimation() {
+  const featuresSection = document.querySelector('.section_features-baneer');
+  const gridItems = document.querySelectorAll('.features-baneer_grid > *');
+
+  if (!featuresSection || gridItems.length === 0) return;
+
+  // Animation des éléments de la grille
+  gsap.fromTo(
+    gridItems,
+    {
+      y: 50,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.2, // Délai de 0.2s entre chaque élément
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: featuresSection,
+        start: 'top bottom-=100', // Déclenche quand le haut de la section est à 100px du bas du viewport
+        toggleActions: 'play none none reverse', // Joue l'animation à l'entrée, la reverse à la sortie
+      },
+    }
+  );
+}
+
+export function initAboutUsAnimation() {
+  const aboutSection = document.querySelector('.section_about-us');
+  const aboutContent = document.getElementById('hp-about-us');
+
+  if (!aboutSection || !aboutContent) return;
+
+  gsap.fromTo(
+    aboutContent,
+    {
+      y: 50,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: aboutSection,
+        start: 'top bottom-=100',
+        toggleActions: 'play none none reverse',
+      },
+    }
+  );
+}
