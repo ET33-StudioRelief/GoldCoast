@@ -6,6 +6,7 @@ import {
   initHeadingAnimation,
   initStickyBookingButtonOpacity,
   initTeamSectionAnimation,
+  initTreatmentsAnimation,
 } from './utils/gsap';
 
 // Initialiser la gestion du formulaire
@@ -16,4 +17,5 @@ window.Webflow.push(() => {
   initStickyBookingButtonOpacity();
   initFeaturesBannerAnimation();
   initAboutUsAnimation();
+  initTreatmentsAnimation();
 });

@@ -7,6 +7,9 @@ gsap.registerPlugin(ScrollTrigger);
  * Words slide in from right with a staggered effect
  */
 export function initHeadingAnimation(): void {
+  // Vérifier si l'écran est plus large que 767px
+  if (window.innerWidth <= 767) return;
+
   // Select the single footer catch paragraph
   const heading = document.querySelector('.footer_catch-p');
 
@@ -147,6 +150,9 @@ export function initStickyBookingButtonOpacity() {
 }
 
 export function initFeaturesBannerAnimation() {
+  // Vérifier si l'écran est plus large que 767px
+  if (window.innerWidth <= 767) return;
+
   const featuresSection = document.querySelector('.section_features-baneer');
   const gridItems = document.querySelectorAll('.features-baneer_grid > *');
 
@@ -175,6 +181,9 @@ export function initFeaturesBannerAnimation() {
 }
 
 export function initAboutUsAnimation() {
+  // Vérifier si l'écran est plus large que 767px
+  if (window.innerWidth <= 767) return;
+
   const aboutSection = document.querySelector('.section_about-us');
   const aboutContent = document.getElementById('hp-about-us');
 
@@ -198,4 +207,61 @@ export function initAboutUsAnimation() {
       },
     }
   );
+}
+
+export function initTreatmentsAnimation() {
+  // Vérifier si l'écran est plus large que 767px
+  if (window.innerWidth <= 767) return;
+
+  const treatmentsSection = document.querySelector('.section_hp-treatments');
+  const treatmentsContent = document.getElementById('hp-treatments');
+  const treatmentsListItems = document.querySelectorAll('.treatments_list > *');
+
+  if (!treatmentsSection) return;
+
+  // Animation du contenu principal (hp-treatments)
+  if (treatmentsContent) {
+    gsap.fromTo(
+      treatmentsContent,
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: treatmentsSection,
+          start: 'top bottom-=100',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+  }
+
+  // Animation des éléments de la liste (treatments_list) - se lance après hp-treatments
+  if (treatmentsListItems.length > 0) {
+    gsap.fromTo(
+      treatmentsListItems,
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power2.out',
+        delay: 0.5, // Délai de 0.5s après le début de l'animation de hp-treatments
+        scrollTrigger: {
+          trigger: treatmentsSection,
+          start: 'top bottom-=100',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+  }
 }
