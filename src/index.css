@@ -3,10 +3,12 @@ body::selection {
   background-color: #cac9e6;
 }
 
-body {
-  background: linear-gradient(180deg, #ffe1b1 19.19%, #fff 100%) !important;
-  background-attachment: fixed !important;
-  min-height: 100vh !important;
+@media (min-width: 768px) {
+  body {
+    background: linear-gradient(180deg, #ffe1b1 19.19%, #fff 100%) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+  }
 }
 /*Micro CSS Animations*/
 @keyframes slideInFromLeft {

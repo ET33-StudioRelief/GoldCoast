@@ -7,9 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
  * Words slide in from right with a staggered effect
  */
 export function initHeadingAnimation(): void {
-  // Vérifier si l'écran est plus large que 767px
-  if (window.innerWidth <= 767) return;
-
   // Select the single footer catch paragraph
   const heading = document.querySelector('.footer_catch-p');
 
@@ -122,31 +119,44 @@ export function initTeamSectionAnimation() {
 }
 
 export function initStickyBookingButtonOpacity() {
-  // Vérifier si l'écran est plus large que 480px
-  if (window.innerWidth <= 480) return;
-
-  const stickyBtn = document.querySelector('.sticky-booking-btn');
+  const stickyBtn = document.querySelector('.sticky-btn_wrapper') as HTMLElement;
   const footerComponent = document.querySelector('.footer_component');
-
   if (!stickyBtn || !footerComponent) return;
 
-  // Animation pour faire disparaître le bouton lors du survol du footer
-  footerComponent.addEventListener('mouseenter', () => {
-    gsap.to(stickyBtn, {
-      opacity: 0,
-      duration: 0.3,
-      ease: 'power2.out',
-    });
-  });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Le bouton sticky touche le footer : on le cache
+          stickyBtn.style.pointerEvents = 'none';
+          gsap.to(stickyBtn, {
+            opacity: 0,
+            y: 40, // décale vers le bas de 40px
+            duration: 0.3,
+            ease: 'power3.inOut',
+            onComplete: () => {
+              stickyBtn.style.pointerEvents = 'none';
+            },
+          });
+        } else {
+          // Le bouton sticky n'est pas sur le footer : on l'affiche
+          stickyBtn.style.pointerEvents = 'auto';
+          gsap.to(stickyBtn, {
+            opacity: 1,
+            y: 0, // remet à la position d'origine
+            duration: 0.3,
+            ease: 'power3.inOut',
+          });
+        }
+      });
+    },
+    {
+      root: null, // viewport
+      threshold: 0.1, // Ajuste si besoin (0.1 = 10% du footer visible)
+    }
+  );
 
-  // Animation pour faire réapparaître le bouton quand on quitte le footer
-  footerComponent.addEventListener('mouseleave', () => {
-    gsap.to(stickyBtn, {
-      opacity: 1,
-      duration: 0.3,
-      ease: 'power2.out',
-    });
-  });
+  observer.observe(footerComponent);
 }
 
 export function initFeaturesBannerAnimation() {
