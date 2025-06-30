@@ -3,13 +3,6 @@ body::selection {
   background-color: #cac9e6;
 }
 
-@media (min-width: 768px) {
-  body {
-    background: linear-gradient(180deg, #ffe1b1 19.19%, #fff 100%) !important;
-    background-attachment: fixed !important;
-    min-height: 100vh !important;
-  }
-}
 /*Micro CSS Animations*/
 @keyframes slideInFromLeft {
   from {
@@ -58,10 +51,5 @@ body::selection {
     display: flex;
     width: auto;
     margin-left: auto;
-  }
-}
-@media (max-width: 1300px) {
-  .footer_catch-p {
-    max-width: 80%;
   }
 }

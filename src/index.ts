@@ -1,12 +1,15 @@
 import './index.css';
 
 import {
+  addBackgroundGradientOnMobileRoutes,
+  animateTreatmentContent,
   initAboutUsAnimation,
   initFeaturesBannerAnimation,
   initHeadingAnimation,
   initStickyBookingButtonOpacity,
   initTeamSectionAnimation,
-  initTreatmentsAnimation,
+  /*initTreatmentsAnimation,*/
+  syncAllImgColHeightsToTextCol,
 } from './utils/gsap';
 
 // Initialiser la gestion du formulaire
@@ -17,5 +20,8 @@ window.Webflow.push(() => {
   initStickyBookingButtonOpacity();
   initFeaturesBannerAnimation();
   initAboutUsAnimation();
-  initTreatmentsAnimation();
+  /*initTreatmentsAnimation();*/
+  syncAllImgColHeightsToTextCol();
+  addBackgroundGradientOnMobileRoutes();
+  animateTreatmentContent();
 });

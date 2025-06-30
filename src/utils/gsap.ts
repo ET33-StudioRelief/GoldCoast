@@ -119,6 +119,7 @@ export function initTeamSectionAnimation() {
 }
 
 export function initStickyBookingButtonOpacity() {
+  if (window.innerWidth >= 768) return;
   const stickyBtn = document.querySelector('.sticky-btn_wrapper') as HTMLElement;
   const footerComponent = document.querySelector('.footer_component');
   if (!stickyBtn || !footerComponent) return;
@@ -127,32 +128,29 @@ export function initStickyBookingButtonOpacity() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Le bouton sticky touche le footer : on le cache
-          stickyBtn.style.pointerEvents = 'none';
           gsap.to(stickyBtn, {
             opacity: 0,
-            y: 40, // décale vers le bas de 40px
-            duration: 0.3,
+            y: 40,
+            duration: 0.8,
             ease: 'power3.inOut',
             onComplete: () => {
               stickyBtn.style.pointerEvents = 'none';
             },
           });
         } else {
-          // Le bouton sticky n'est pas sur le footer : on l'affiche
           stickyBtn.style.pointerEvents = 'auto';
           gsap.to(stickyBtn, {
             opacity: 1,
-            y: 0, // remet à la position d'origine
-            duration: 0.3,
+            y: 0,
+            duration: 0.8,
             ease: 'power3.inOut',
           });
         }
       });
     },
     {
-      root: null, // viewport
-      threshold: 0.1, // Ajuste si besoin (0.1 = 10% du footer visible)
+      root: null,
+      threshold: 0.1,
     }
   );
 
@@ -274,4 +272,82 @@ export function initTreatmentsAnimation() {
       }
     );
   }
+}
+
+export function syncAllImgColHeightsToTextCol() {
+  document.querySelectorAll('.treatment_grid').forEach((grid) => {
+    const imgCols = grid.querySelectorAll('.treatment_img-col');
+    const textCols = grid.querySelectorAll('.treatment_text-col');
+    // On synchronise chaque paire par leur index
+    imgCols.forEach((imgCol, i) => {
+      const textCol = textCols[i] as HTMLElement | undefined;
+      if (imgCol && textCol) {
+        (imgCol as HTMLElement).style.height = textCol.offsetHeight + 'px';
+      }
+    });
+  });
+}
+
+export function addBackgroundGradientOnMobileRoutes() {
+  if (window.innerWidth >= 768) return;
+  const mainWrappers = document.querySelectorAll('.main-wrapper');
+  if (!mainWrappers.length) return;
+  const path = window.location.pathname;
+  const routes = ['/legal', '/faq', '/contact', '/treatments'];
+  // Si l'URL contient un des segments, on ajoute 'is-purple-gradient', sinon 'is-gold-gradient'
+  if (path === '/' || routes.some((route) => path.includes(route))) {
+    mainWrappers.forEach((wrapper) => wrapper.classList.add('is-purple-gradient'));
+  } else {
+    mainWrappers.forEach((wrapper) => wrapper.classList.add('is-gold-gradient'));
+  }
+}
+
+export function animateTreatmentContent() {
+  // Animation pour .treatment_content
+  document.querySelectorAll('.treatment_content').forEach((container) => {
+    Array.from(container.children).forEach((child) => {
+      gsap.fromTo(
+        child,
+        {
+          y: 40,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: child,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+    });
+  });
+
+  // Animation pour .persona-treatment_list-wrapper
+  document.querySelectorAll('.persona-treatment_list-wrapper').forEach((container) => {
+    Array.from(container.children).forEach((child) => {
+      gsap.fromTo(
+        child,
+        {
+          y: 40,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: child,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+    });
+  });
 }
