@@ -42,14 +42,3 @@ body::selection {
     animation: slideInFromLeft 0.5s 2s forwards;
   }
 }
-/*Footer Responsive*/
-@media (min-width: 1400px) {
-  #footer-contact {
-    display: none;
-  }
-  .footer_btn-large-container {
-    display: flex;
-    width: auto;
-    margin-left: auto;
-  }
-}

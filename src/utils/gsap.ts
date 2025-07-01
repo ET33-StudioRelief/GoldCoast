@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
  * Initializes animation for the footer catch paragraph
  * Words slide in from right with a staggered effect
  */
-export function initHeadingAnimation(): void {
+/*export function initHeadingAnimation(): void {
   // Select the single footer catch paragraph
   const heading = document.querySelector('.footer_catch-p');
 
@@ -64,7 +64,7 @@ export function initHeadingAnimation(): void {
     ease: 'power3.out', // Smooth easing
     stagger: 0.1, // Delay between each word animation
   });
-}
+}*/
 
 export function initTeamSectionAnimation() {
   // Vérifier si l'écran est plus large que 992px
@@ -348,6 +348,76 @@ export function animateTreatmentContent() {
           },
         }
       );
+    });
+  });
+}
+
+export function initAboutUsCardHoverAnimation() {
+  const aboutUsCards = document.querySelectorAll('.about-us_card');
+
+  aboutUsCards.forEach((card) => {
+    const h3Element = card.querySelector('.about-us_h3') as HTMLElement;
+
+    if (!h3Element) return;
+
+    // Animation au hover
+    card.addEventListener('mouseenter', () => {
+      gsap.to(h3Element, {
+        x: '-1.5rem',
+        duration: 0.6,
+        ease: 'power2.inOut',
+      });
+    });
+
+    // Animation à la sortie du hover
+    card.addEventListener('mouseleave', () => {
+      gsap.to(h3Element, {
+        x: '0rem',
+        duration: 0.6,
+        ease: 'power2.inOut',
+      });
+    });
+  });
+}
+
+export function initTeamCvToggle() {
+  const cvOpenButtons = document.querySelectorAll('.hp-team_cv-open');
+  const cvCloseButtons = document.querySelectorAll('.hp-team_cv-close');
+
+  // Gestion de l'ouverture des CV
+  cvOpenButtons.forEach((openBtn) => {
+    openBtn.addEventListener('click', () => {
+      // Trouver le contenu CV correspondant (même parent ou structure)
+      const cvContent = openBtn
+        .closest('.hp-team_card')
+        ?.querySelector('.hp-team_cv-content-open') as HTMLElement;
+
+      if (cvContent) {
+        // Afficher le contenu CV
+        cvContent.style.display = 'block';
+        // Masquer le bouton d'ouverture
+        (openBtn as HTMLElement).style.display = 'none';
+      }
+    });
+  });
+
+  // Gestion de la fermeture des CV
+  cvCloseButtons.forEach((closeBtn) => {
+    closeBtn.addEventListener('click', () => {
+      // Trouver le contenu CV correspondant (même parent ou structure)
+      const cvContent = closeBtn
+        .closest('.hp-team_card')
+        ?.querySelector('.hp-team_cv-content-open') as HTMLElement;
+      const cvOpenBtn = closeBtn
+        .closest('.hp-team_card')
+        ?.querySelector('.hp-team_cv-open') as HTMLElement;
+
+      if (cvContent && cvOpenBtn) {
+        // Masquer le contenu CV
+        cvContent.style.display = 'none';
+        // Afficher le bouton d'ouverture
+        cvOpenBtn.style.display = 'block';
+      }
     });
   });
 }

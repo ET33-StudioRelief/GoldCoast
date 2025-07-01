@@ -4,23 +4,23 @@ import {
   addBackgroundGradientOnMobileRoutes,
   animateTreatmentContent,
   initAboutUsAnimation,
+  initAboutUsCardHoverAnimation,
   initFeaturesBannerAnimation,
-  initHeadingAnimation,
   initStickyBookingButtonOpacity,
+  initTeamCvToggle,
   initTeamSectionAnimation,
-  /*initTreatmentsAnimation,*/
   syncAllImgColHeightsToTextCol,
 } from './utils/gsap';
 
 // Initialiser la gestion du formulaire
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  initHeadingAnimation();
   initTeamSectionAnimation();
   initStickyBookingButtonOpacity();
   initFeaturesBannerAnimation();
   initAboutUsAnimation();
-  /*initTreatmentsAnimation();*/
+  initAboutUsCardHoverAnimation();
+  initTeamCvToggle();
   syncAllImgColHeightsToTextCol();
   addBackgroundGradientOnMobileRoutes();
   animateTreatmentContent();
