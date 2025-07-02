@@ -42,3 +42,12 @@ body::selection {
     animation: slideInFromLeft 0.5s 2s forwards;
   }
 }
+/*footer - firefox */
+.footer_catch-p br {
+  margin-top: 0 !important;
+}
+/*Rich text - clinic*/
+.text-rich-text b,
+strong {
+  font-weight: 400;
+}
